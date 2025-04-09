@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment (adjust folder name if different)
+env/
+
+# SQLite database (if applicable)
+db.sqlite3
+
+# Media files (if you store them locally)
+media/
+
+# PyCharm / VS Code
+.idea/
+.vscode/
+
+# Others
+*.log
