@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -77,9 +78,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'narratica_db',
-        'USER': 'your_db_user',
-        'PASSWORD': 'your_password',
+        'NAME': 'Narratica_GPTLAdb',
+        'USER': 'postgres',
+        'PASSWORD': 'hamburger',
         'HOST': 'localhost',
         'PORT': '5432',
     }

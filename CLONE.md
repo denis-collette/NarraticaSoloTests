@@ -41,13 +41,13 @@ cd Narratica
 - Navigate to the backend directory:
 
 ```bash
-cd App/Back(Django)
+cd backend
 ```
 
 - Set up a virtual environment:
 
 ```bash
-python3 -m venv env
+python -m venv env
 source env/bin/activate
 ```
 
@@ -69,7 +69,7 @@ python manage.py createsuperuser
 - Navigate to the frontend directory:
 
 ```bash
-cd ../Front(React)
+cd ../frontend
 ```
 
 - Install Node.js dependencies:
