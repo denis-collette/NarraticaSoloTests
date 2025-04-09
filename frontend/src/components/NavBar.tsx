@@ -15,13 +15,13 @@ export default function NavBar() {
             <Link href="/">Accueil</Link>
             </li>
             <li>
-            <Link href="/profil">Profil</Link>
+            <Link href="/profile">Profil</Link>
             </li>
             <li>
             <Link href="/login">Connexion</Link>
             </li>
             <li>
-            <Link href="/signup">Inscription</Link>
+            <Link href="/register">Inscription</Link>
             </li>
             <li>
             <Link href="/bookView">Book View</Link>
