@@ -5,6 +5,7 @@ __pycache__/
 
 # Virtual environment (adjust folder name if different)
 env/
+venv/
 
 # SQLite database (if applicable)
 db.sqlite3

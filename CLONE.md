@@ -3,18 +3,19 @@
 ## If your repository is structured like this:
 
 ```lua
-Narratica/
-├── App/
-│   ├── Back(Django)/   <-- Django backend here
-│   │   ├── manage.py
-│   │   ├── requirements.txt
-│   │   └── .gitignore
-│   └── Front(React)/   <-- Next.js frontend here
-│       ├── package.json
-│       ├── package-lock.json
-│       ├── .gitignore
-│       └── ... (other frontend files)
-└── .gitignore          <-- optional, for overall project if needed
+NarraticaTutorialChatGPT/
+├── backend/            <-- Django backend here
+│   ├── manage.py
+│   ├── requirements.txt
+│   ├── .gitignore
+│   └── ... (other backend files)
+├── frontend/           <-- Next.js frontend here
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .gitignore
+│   └── ... (other frontend files)
+├── README.md
+└── ... (other global files)
 ```
 
 ## 1. On your current computer:

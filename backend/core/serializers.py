@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Audiobook, Chapter, Favorite, Author, Narrator, Publisher, User
 from django.contrib.auth.password_validation import validate_password
 
+# User serializers
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -29,6 +30,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         return user
 
+# Audiobook and Chapter serializers
 class ChapterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chapter
@@ -44,7 +46,40 @@ class AudiobookSerializer(serializers.ModelSerializer):
         model = Audiobook
         fields = '__all__'
 
+# Favorite serializer (single model handling all favorites)
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favorite
         fields = '__all__'
+
+# Author, Narrator, Publisher serializers
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = '__all__'
+
+class NarratorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Narrator
+        fields = '__all__'
+
+class PublisherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Publisher
+        fields = '__all__'
+
+# Optional: Specific Favorite serializers can be kept, if needed
+class FavoriteAuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorite
+        fields = ['user', 'author']
+
+class FavoriteNarratorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorite
+        fields = ['user', 'narrator']
+
+class FavoritePublisherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorite
+        fields = ['user', 'publisher']

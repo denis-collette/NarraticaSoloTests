@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from rest_framework import viewsets, status, permissions
+from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -40,7 +40,20 @@ class LoginView(APIView):
 class AudiobookViewSet(viewsets.ModelViewSet):
     queryset = Audiobook.objects.all()
     serializer_class = AudiobookSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]  # Restrict to authenticated users for create/update
+
+    @action(detail=False, methods=['get'])
+    def newest(self, request):
+        latest_audiobooks = Audiobook.objects.order_by('-upload_date')[:10]
+        serializer = AudiobookSerializer(latest_audiobooks, many=True)
+        return Response(serializer.data)
+
+    @action(detail=True, methods=['get'])
+    def chapters(self, request, pk=None):
+        audiobook = self.get_object()
+        chapters = audiobook.chapter_set.all()
+        serializer = ChapterSerializer(chapters, many=True)
+        return Response(serializer.data)
 
 class ChapterViewSet(viewsets.ModelViewSet):
     queryset = Chapter.objects.all()
@@ -51,3 +64,11 @@ class FavoriteViewSet(viewsets.ModelViewSet):
     queryset = Favorite.objects.all()
     serializer_class = FavoriteSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    @action(detail=False, methods=['get'])
+    def user_favorites(self, request):
+        user = request.user
+        favorites = Favorite.objects.filter(user=user)
+        serializer = FavoriteSerializer(favorites, many=True)
+        return Response(serializer.data)
+
