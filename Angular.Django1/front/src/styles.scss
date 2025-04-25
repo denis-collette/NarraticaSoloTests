@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-primary: #F4B942;
+    --color-secondary: #EF7C78;
+    --color-tertiary: #70B9C1;
+    --color-background: #FDF6E3;
+    --color-text: #2D2D2D;
+    --color-accent: #FF9244;
+}
+
+.dark-theme {
+    --color-background: #2D2D2D;
+    --color-text: #FDF6E3;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+

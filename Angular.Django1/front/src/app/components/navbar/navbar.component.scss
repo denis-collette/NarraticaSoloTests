@@ -1,0 +1,33 @@
+.active {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+nav {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 1rem;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: bold;
+
+        &:hover {
+            color: var(--color-accent);
+        }
+
+        .active {
+            border-bottom: 2px solid var(--color-accent);
+        }
+    }
+}

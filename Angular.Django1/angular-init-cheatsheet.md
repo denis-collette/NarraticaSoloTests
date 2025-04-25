@@ -43,13 +43,18 @@ Use component `.scss` files or `src/styles.scss` for global styles.
 ```
 src/
 ├── app/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
+│   ├── components/      👈 Reusable UI components (e.g., buttons, cards)
+│   ├── pages/           👈 Route-based views (e.g., homepage, login, dashboard)
+│   ├── services/        👈 Reusable logic like API calls
+│   ├── app.component.ts
+│   ├── app.routes.ts
 │   ├── app.config.ts
-│   └── app.routes.ts
+│   └── ...
 ├── assets/
+├── environments/
+├── index.html
 ├── styles.scss
+└── main.ts
 ```
 
 ## 📄 9. Useful Angular CLI Commands
